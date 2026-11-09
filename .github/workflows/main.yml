@@ -20,4 +20,4 @@ jobs:
     - name: Build iOS App
       run: |
         # Replace "YOUR_SCHEME_NAME" once you find it in the logs above
-        xcodebuild -scheme "YOUR_SCHEME_NAME" -destination "generic/platform=iOS Simulator" clean build
+        xcodebuild -scheme "MinecraftSilex" -destination "generic/platform=iOS Simulator" clean build
