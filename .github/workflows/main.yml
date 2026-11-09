@@ -1,6 +1,5 @@
-name: Build App
+name: Build iOS App
 
-# Define when the workflow should run
 on:
   push:
     branches: [ "main", "master" ]
@@ -9,23 +8,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
-    # 1. Checkout your repository code onto the runner
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # 2. Set up the environment (Node.js in this example)
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-
-    # 3. Install dependencies
-    - name: Install dependencies
-      run: npm install
-
-    # 4. Build the application
-    - name: Run build script
-      run: npm run build
+    - name: Build iOS App
+      run: xcodebuild -scheme "Amethyst" -destination "generic/platform=iOS Simulator" clean build
