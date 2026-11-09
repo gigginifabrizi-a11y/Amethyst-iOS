@@ -14,5 +14,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: List available schemes
+      run: xcodebuild -list
+
     - name: Build iOS App
-      run: xcodebuild -scheme "Amethyst" -destination "generic/platform=iOS Simulator" clean build
+      run: |
+        # Replace "YOUR_SCHEME_NAME" once you find it in the logs above
+        xcodebuild -scheme "YOUR_SCHEME_NAME" -destination "generic/platform=iOS Simulator" clean build
